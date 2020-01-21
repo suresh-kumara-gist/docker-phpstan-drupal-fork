@@ -4,14 +4,6 @@
 # https://github.com/dcycle/docker-drupal
 FROM dcycle/drupal:8drush
 
-RUN export COMPOSER_MEMORY_LIMIT=-1 && composer require \
-  mglaman/phpstan-drupal
-
-RUN pwd
-RUN ls -lah vendor/phpstan/phpstan
-RUN vendor/phpstan/phpstan/phpstan
-RUN find . -name extension.neon
-
 COPY docker-resources/composer.json /var/www/html/composer.json
 RUN composer update
 COPY docker-resources/phpstan.neon /var/www/html/phpstan.neon
