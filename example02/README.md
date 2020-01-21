@@ -1,0 +1,1 @@
+Example where errors can be ignored per line. We used an adapted solution from [@kolibabchuk](https://github.com/kolibabchuk) [documented here](https://github.com/phpstan/phpstan/issues/786#issuecomment-532865549).
