@@ -1,6 +1,6 @@
 [![CircleCI](https://circleci.com/gh/dcycle/docker-phpstan-drupal.svg?style=svg)](https://circleci.com/gh/dcycle/docker-phpstan-drupal)
 
-Perform static analysis of Draupl PHP code with [PHPStan](https://github.com/phpstan/phpstan) and [PHPStan-Drupal](https://github.com/mglaman/phpstan-drupal).
+Perform static analysis of Drupal PHP code with [PHPStan](https://github.com/phpstan/phpstan) and [PHPStan-Drupal](https://github.com/mglaman/phpstan-drupal).
 
 For example:
 
