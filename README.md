@@ -20,9 +20,14 @@ Ignoring a single line of code
 
 At the time of this writing, PHPStan by itself does not support ignoring an error on a single line. We used an adapted solution from [@kolibabchuk](https://github.com/kolibabchuk) [documented here](https://github.com/phpstan/phpstan/issues/786#issuecomment-532865549), so using this Dockerized version of PHPStan-Drupal, you can ignore a single line using, for example:
 
-    // phpstan:ingoreError
+    // phpstan:ignoreError
     return \Drupal::cache()->get(Unicode::strtolower($something));
 
+or even:
+
+    // Whatever whatever phpstan:ignoreError whatever whatever.
+    return \Drupal::cache()->get(Unicode::strtolower($something));
+    
 Obviously, we generally want to fix the underlying problem, but if for whatever reason you need to ignore an error, you can now do so.
 
 See [this project on the Docker Hub](https://hub.docker.com/r/dcycle/phpstan-drupal/).

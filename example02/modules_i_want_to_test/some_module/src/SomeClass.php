@@ -20,7 +20,7 @@ class SomeClass {
     $other_class = new SomeOtherClass();
     $other_class->sayHello();
 
-    // phpstan:ingoreError
+    // Whatever whatever phpstan:ignoreError whatever whatever.
     return \Drupal::cache()->get(Unicode::strtolower($something));
   }
 

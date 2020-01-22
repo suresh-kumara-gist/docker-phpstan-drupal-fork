@@ -14,7 +14,7 @@ use PHPStan\Command\Output;
  */
 class IgnoredErrorsFilter extends TableErrorFormatter {
 
-  private const MUTE_ERROR_ANNOTATION = 'phpstan:ingoreError';
+  private const MUTE_ERROR_ANNOTATION = 'phpstan:ignoreError';
 
   private const NO_ERRORS = 0;
 
