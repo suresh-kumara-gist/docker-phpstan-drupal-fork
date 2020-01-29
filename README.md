@@ -4,8 +4,12 @@ Perform static analysis of Drupal PHP code with [PHPStan](https://github.com/php
 
 For example:
 
-    docker run --rm -v $(pwd)/example01/modules_i_want_to_test:/var/www/html/modules/custom dcycle/phpstan-drupal:1 /var/www/html/modules/custom
-    docker run --rm -v $(pwd)/example02/modules_i_want_to_test:/var/www/html/modules/custom dcycle/phpstan-drupal:1 /var/www/html/modules/custom
+    docker run --rm \
+      -v $(pwd)/example01/modules_i_want_to_test:/var/www/html/modules/custom \
+      dcycle/phpstan-drupal:1 /var/www/html/modules/custom
+    docker run --rm \
+      -v $(pwd)/example02/modules_i_want_to_test:/var/www/html/modules/custom \
+      dcycle/phpstan-drupal:1 /var/www/html/modules/custom
     docker run --rm \
       -v $(pwd)/example03/modules_i_want_to_test:/var/www/html/modules/custom \
       -v $(pwd)/example03/phpstan-drupal:/phpstan-drupal \
