@@ -5,6 +5,10 @@
 
 set -e
 
+# Always test before rebuilding as the API can have changed, for example at
+# https://github.com/phpstan/phpstan-src/commit/3e1ce5d06e574c6da93b8fa3dcf8569f8f8fcff3#diff-c9426bbd63493f10ff3790c0f0d13f99R39
+./test.sh
+
 CREDENTIALS="$HOME/.dcycle-docker-credentials.sh"
 
 if [ ! -f "$CREDENTIALS" ]; then

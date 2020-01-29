@@ -33,6 +33,7 @@ class IgnoredErrorsFilter extends TableErrorFormatter {
     $clearedAnalysisResult = new AnalysisResult(
       $fileSpecificErrorsWithoutIgnoredErrors,
       $analysisResult->getNotFileSpecificErrors(),
+      $analysisResult->getWarnings(),
       $analysisResult->isDefaultLevelUsed(),
       $analysisResult->hasInferrablePropertyTypesFromConstructor(),
       $analysisResult->getProjectConfigFile()
@@ -53,12 +54,19 @@ class IgnoredErrorsFilter extends TableErrorFormatter {
    */
   private function clearIgnoredErrors(array $fileSpecificErrors): array {
     foreach ($fileSpecificErrors as $index => $error) {
-      $fileName = $error->getFile();
+      // ::getFile() generally returns the file path, except in the case of
+      // traits, which is why getFilePath() is preferred.
+      $fileName = $error->getFilePath();
 
       $file = new \SplFileObject($fileName);
 
-      // get the line above to the line that caused the error
-      $file->seek($error->getLine() - 2);
+      // Get the line above to the line that caused the error
+      $candidate = $error->getLine() - 2;
+      if ($candidate < 0) {
+        // Negative lines are not possible.
+        break;
+      }
+      $file->seek($candidate);
 
       $line = $file->current();
 
