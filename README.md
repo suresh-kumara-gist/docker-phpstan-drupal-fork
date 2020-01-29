@@ -31,12 +31,12 @@ or even:
 
     // Whatever whatever phpstan:ignoreError whatever whatever.
     return \Drupal::cache()->get(Unicode::strtolower($something));
-    
+
 Obviously, we generally want to fix the underlying problem, but if for whatever reason you need to ignore an error, you can now do so.
 
 See [this project on the Docker Hub](https://hub.docker.com/r/dcycle/phpstan-drupal/).
 
-Custom config file 
+Custom config file
 -----
 
 If you need a custom config file, for example if you want a different level, or to tell PHPStan to ignore certain files, you can do so by including the provided config file. See [example05](https://github.com/dcycle/docker-phpstan-drupal/tree/master/example05) for details; it can be run using:
@@ -45,14 +45,14 @@ If you need a custom config file, for example if you want a different level, or 
       -v $(pwd)/example05/modules_i_want_to_test:/var/www/html/modules/custom \
       dcycle/phpstan-drupal:1 /var/www/html/modules/custom \
       -c /var/www/html/modules/custom/phpstan.neon
-      
+
 If you look at the [custom config file in example05](https://github.com/dcycle/docker-phpstan-drupal/blob/master/example05/modules_i_want_to_test/phpstan.neon), it looks like this:
 
+    # See https://github.com/dcycle/docker-phpstan-drupal/blob/master/README.md#custom-config-file
     parameters:
       excludes_analyse:
         - */tests/*
     includes:
       - /var/www/html/phpstan.neon
-      
-This tells PHPStan that we want our custom configuration exclude paths like `*/tests/*` from PHPStan analysis, and use the default `/var/www/html/phpstan.neon` for everything else. `/var/www/html/phpstan.neon` is not in your own code, it is in the dcycle/phpstan-drupal container. Its contents can be found [here](https://github.com/dcycle/docker-phpstan-drupal/blob/master/docker-resources/phpstan.neon).
 
+This tells PHPStan that we want our custom configuration exclude paths like `*/tests/*` from PHPStan analysis, and use the default `/var/www/html/phpstan.neon` for everything else. `/var/www/html/phpstan.neon` is not in your own code, it is in the dcycle/phpstan-drupal container. Its contents can be found [here](https://github.com/dcycle/docker-phpstan-drupal/blob/master/docker-resources/phpstan.neon).
