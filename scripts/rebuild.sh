@@ -20,6 +20,8 @@ else
   source "$CREDENTIALS";
 fi
 
+./test.sh
+
 PROJECT=phpstan-drupal
 DATE=`date '+%Y-%m-%d-%H-%M-%S-%Z'`
 MAJORVERSION='1'
