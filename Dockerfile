@@ -5,7 +5,7 @@
 FROM dcycle/drupal:8drush
 
 COPY docker-resources/composer.json /var/www/html/composer.json
-RUN composer update
+RUN export COMPOSER_MEMORY_LIMIT=-1 && composer update
 COPY docker-resources/phpstan.neon /var/www/html/phpstan.neon
 COPY docker-resources/phpstan-autoloader.php /var/www/html/phpstan-autoloader.php
 COPY docker-resources/IgnoredErrorsFilter.php /var/www/html/statictools/PHPStan/IgnoredErrorsFilter.php
