@@ -22,7 +22,7 @@ For example:
 Ignoring a single line of code
 -----
 
-At the time of this writing, PHPStan by itself does not support ignoring an error on a single line. We used an adapted solution from [@kolibabchuk](https://github.com/kolibabchuk) [documented here](https://github.com/phpstan/phpstan/issues/786#issuecomment-532865549), so using this Dockerized version of PHPStan-Drupal, you can ignore a single line using, for example:
+At the time of this writing, ~PHPStan by itself does not support ignoring an error on a single line~ [an issue has just been resolved allowing ignoring a single line in PHPStan, although I haven't tested it yet](https://github.com/phpstan/phpstan/issues/786#issuecomment-631737769). We used an adapted solution from [@kolibabchuk](https://github.com/kolibabchuk) [documented here](https://github.com/phpstan/phpstan/issues/786#issuecomment-532865549), so using this Dockerized version of PHPStan-Drupal, you can ignore a single line using, for example:
 
     // phpstan:ignoreError
     return \Drupal::cache()->get(Unicode::strtolower($something));
