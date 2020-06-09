@@ -34,6 +34,17 @@ or even:
 
 Obviously, we generally want to fix the underlying problem, but if for whatever reason you need to ignore an error, you can now do so.
 
+Migrating from dcycle/phpstan-drupal:1 to dcycle/phpstan-drupal:2
+-----
+
+If you had code which was using dcycle/phpstan-drupal:1 and would like to move to dcycle/phpstan-drupal:2, change all instances of:
+
+    phpstan:ignoreError
+    
+to
+
+    @phpstan-ignore-next-line
+
 See [this project on the Docker Hub](https://hub.docker.com/r/dcycle/phpstan-drupal/).
 
 Custom config file
