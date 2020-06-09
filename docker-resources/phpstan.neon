@@ -7,11 +7,3 @@ parameters:
 includes:
   - vendor/mglaman/phpstan-drupal/extension.neon
 # https://github.com/phpstan/phpstan/issues/786#issuecomment-532865549
-services:
-  errorFormatter.filtered:
-    class: App\Statictools\PHPStan\IgnoredErrorsFilter
-    arguments:
-      showTipsOfTheDay: %tipsOfTheDay%
-      checkThisOnly: %checkThisOnly%
-      inferPrivatePropertyTypeFromConstructor: %inferPrivatePropertyTypeFromConstructor%
-      checkMissingTypehints: %checkMissingTypehints%
