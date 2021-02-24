@@ -2,7 +2,7 @@
 # The dcycle/drupal images are updated Wednesdays after the security update
 # window, and already have Composer installed. See
 # https://github.com/dcycle/docker-drupal
-FROM dcycle/drupal:8drush
+FROM dcycle/drupal:9
 
 COPY docker-resources/composer.json /var/www/html/composer.json
 RUN export COMPOSER_MEMORY_LIMIT=-1 && composer update

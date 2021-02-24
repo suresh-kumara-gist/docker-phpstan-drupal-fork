@@ -6,18 +6,18 @@ For example:
 
     docker run --rm \
       -v $(pwd)/example01/modules_i_want_to_test:/var/www/html/modules/custom \
-      dcycle/phpstan-drupal:2 /var/www/html/modules/custom
+      dcycle/phpstan-drupal:3 /var/www/html/modules/custom
     docker run --rm \
       -v $(pwd)/example02/modules_i_want_to_test:/var/www/html/modules/custom \
-      dcycle/phpstan-drupal:2 /var/www/html/modules/custom
+      dcycle/phpstan-drupal:3 /var/www/html/modules/custom
     docker run --rm \
       -v $(pwd)/example03/modules_i_want_to_test:/var/www/html/modules/custom \
       -v $(pwd)/example03/phpstan-drupal:/phpstan-drupal \
-      dcycle/phpstan-drupal:2 /var/www/html/modules/custom
+      dcycle/phpstan-drupal:3 /var/www/html/modules/custom
     docker run --rm \
       -v $(pwd)/example04/some_module:/var/www/html/modules/custom/some_module \
       -v $(pwd)/example04/phpstan-drupal:/phpstan-drupal \
-      dcycle/phpstan-drupal:2 /var/www/html/modules/custom
+      dcycle/phpstan-drupal:3 /var/www/html/modules/custom
 
 Ignoring a single line of code
 -----
@@ -34,18 +34,12 @@ or even:
 
 Obviously, we generally want to fix the underlying problem, but if for whatever reason you need to ignore an error, you can now do so.
 
-Migrating from dcycle/phpstan-drupal:1 to dcycle/phpstan-drupal:2
+Version history and migrating from one version to another
 -----
 
-If you had code which was using dcycle/phpstan-drupal:1 and would like to move to dcycle/phpstan-drupal:2, change all instances of:
-
-    phpstan:ignoreError
-    
-to
-
-    @phpstan-ignore-next-line
-
-See [this project on the Docker Hub](https://hub.docker.com/r/dcycle/phpstan-drupal/).
+* dcycle/phpstan-drupal:3 is based on Drupal 9; Drupal 8-specific code might trigger errors
+* dcycle/phpstan-drupal:2 uses `@phpstan-ignore-next-line` to ignore the next line of code.
+* dcycle/phpstan-drupal:1 uses `phpstan:ignoreError` to ignore the next line of code.
 
 Custom config file
 -----
@@ -54,7 +48,7 @@ If you need a custom config file, for example if you want a different level, or 
 
     docker run --rm \
       -v $(pwd)/example05/modules_i_want_to_test:/var/www/html/modules/custom \
-      dcycle/phpstan-drupal:2 /var/www/html/modules/custom \
+      dcycle/phpstan-drupal:3 /var/www/html/modules/custom \
       -c /var/www/html/modules/custom/phpstan.neon
 
 If you look at the [custom config file in example05](https://github.com/dcycle/docker-phpstan-drupal/blob/master/example05/modules_i_want_to_test/phpstan.neon), it looks like this:
