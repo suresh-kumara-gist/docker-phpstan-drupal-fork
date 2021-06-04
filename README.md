@@ -61,3 +61,14 @@ If you look at the [custom config file in example05](https://github.com/dcycle/d
       - /var/www/html/phpstan.neon
 
 This tells PHPStan that we want our custom configuration exclude paths like `*/tests/*` from PHPStan analysis, and use the default `/var/www/html/phpstan.neon` for everything else. `/var/www/html/phpstan.neon` is not in your own code, it is in the dcycle/phpstan-drupal container. Its contents can be found [here](https://github.com/dcycle/docker-phpstan-drupal/blob/master/docker-resources/phpstan.neon).
+
+Troubleshooting
+-----
+
+Out of memory errors can be fixed by adding `--memory-limit=-1` to the end of your call, for example:
+
+    docker run --rm \
+      -v $(pwd)/example01/modules_i_want_to_test:/var/www/html/modules/custom \
+      dcycle/phpstan-drupal:3 /var/www/html/modules/custom \
+      --memory-limit=-1
+
