@@ -5,7 +5,7 @@
 FROM dcycle/drupal:9
 
 COPY docker-resources/composer.json /var/www/html/composer.json
-RUN export COMPOSER_MEMORY_LIMIT=-1 && composer update
+RUN composer update
 COPY docker-resources/phpstan.neon /var/www/html/phpstan.neon
 COPY docker-resources/phpstan-autoloader.php /var/www/html/phpstan-autoloader.php
 

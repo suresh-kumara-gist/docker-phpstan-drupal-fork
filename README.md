@@ -55,7 +55,7 @@ If you look at the [custom config file in example05](https://github.com/dcycle/d
 
     # See https://github.com/dcycle/docker-phpstan-drupal/blob/master/README.md#custom-config-file
     parameters:
-      excludes_analyse:
+      excludePaths:
         - */tests/*
     includes:
       - /var/www/html/phpstan.neon
