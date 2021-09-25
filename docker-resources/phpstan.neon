@@ -2,8 +2,8 @@ parameters:
   level: 5
   drupal:
     drupal_root: /var/www/html
-  autoload_files:
+  bootstrapFiles:
     - /var/www/html/phpstan-autoloader.php
 includes:
   - vendor/mglaman/phpstan-drupal/extension.neon
-# https://github.com/phpstan/phpstan/issues/786#issuecomment-532865549
+  - vendor/phpstan/phpstan-deprecation-rules/rules.neon

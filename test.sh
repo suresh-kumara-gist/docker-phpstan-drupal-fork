@@ -1,24 +1,15 @@
 set -e
 docker build -t local-dcycle-phpstan-drupal-image .
 
-docker run --rm \
-  -v $(pwd)/example01/modules_i_want_to_test:/var/www/html/modules/custom \
-  local-dcycle-phpstan-drupal-image /var/www/html/modules/custom
-docker run --rm \
-  -v $(pwd)/example02/modules_i_want_to_test:/var/www/html/modules/custom \
-  local-dcycle-phpstan-drupal-image /var/www/html/modules/custom
-docker run --rm \
-  -v $(pwd)/example03/modules_i_want_to_test:/var/www/html/modules/custom \
-  -v $(pwd)/example03/phpstan-drupal:/phpstan-drupal \
-  local-dcycle-phpstan-drupal-image /var/www/html/modules/custom
-docker run --rm \
-  -v $(pwd)/example04/some_module:/var/www/html/modules/custom/some_module \
-  -v $(pwd)/example04/phpstan-drupal:/phpstan-drupal \
-  local-dcycle-phpstan-drupal-image /var/www/html/modules/custom
-docker run --rm \
-  -v $(pwd)/example05/modules_i_want_to_test:/var/www/html/modules/custom \
-  local-dcycle-phpstan-drupal-image /var/www/html/modules/custom \
-  -c /var/www/html/modules/custom/phpstan.neon
-docker run --rm \
-  -v $(pwd)/example06/modules_i_want_to_test:/var/www/html/modules/custom \
-  local-dcycle-phpstan-drupal-image /var/www/html/modules/custom
+for n in 1 2 3 4 5 6 7; do
+  echo "---"
+  echo "Testing example0$n"
+  echo "---"
+  ./example0"$n"/test.sh
+  echo "---"
+  echo "Done testing example0$n"
+  echo "---"
+done;
+echo "---"
+echo "Done testing all!"
+echo "---"

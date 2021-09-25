@@ -20,7 +20,7 @@ class SomeClass {
     $other_class = new SomeOtherClass();
     $other_class->sayHello();
 
-    return json_decode(Unicode::strtolower($something));
+    return json_decode(Unicode::truncate($something, 20));
   }
 
 }

@@ -2,7 +2,6 @@
 
 namespace Drupal\some_module;
 
-use Drupal\Component\Utility\Unicode;
 use Drupal\some_module\Whatever\SomeOtherClass;
 
 /**
@@ -20,7 +19,7 @@ class SomeClass {
     $other_class = new SomeOtherClass();
     $other_class->sayHello();
 
-    return json_decode(Unicode::strtolower($something));
+    return json_decode(mb_strtolower($something));
   }
 
 }

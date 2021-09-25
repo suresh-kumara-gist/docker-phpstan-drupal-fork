@@ -2,7 +2,6 @@
 
 namespace Drupal\some_module;
 
-use Drupal\Component\Utility\Unicode;
 use Drupal\some_module\Whatever\SomeOtherClass;
 
 /**
@@ -21,7 +20,7 @@ class SomeClass {
     $other_class->sayHello();
 
     // Whatever whatever @phpstan-ignore-next-line whatever whatever.
-    return \Drupal::cache()->get(Unicode::strtolower($something));
+    return \Drupal::cache()->get(mb_strtolower($something));
   }
 
 }

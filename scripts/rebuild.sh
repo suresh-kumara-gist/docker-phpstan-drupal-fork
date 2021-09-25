@@ -24,11 +24,11 @@ fi
 
 PROJECT=phpstan-drupal
 DATE=`date '+%Y-%m-%d-%H-%M-%S-%Z'`
-MAJORVERSION='3'
-VERSION='3.0'
+MAJORVERSION='4'
+VERSION='4.0'
 
 # Start by getting the latest version of the official drupal image
-docker pull dcycle/drupal:9
+docker pull dcycle/drupal:9php8
 # Rebuild the entire thing
 docker build --no-cache -t dcycle/"$PROJECT":"$VERSION" .
 docker build -t dcycle/"$PROJECT":"$MAJORVERSION" .
