@@ -91,3 +91,8 @@ Speed increase if using the M1 chip
 
 * See [Docker PHP on the M1 chip, example with Static Analysis on Drupal: 9 times faster, Dcycle Blog, November 17, 2021](https://blog.dcycle.com/blog/2021-11-17/m1-docker-php-speed-test/).
 
+Resources
+-----
+
+* [This project on GitHub](https://github.com/dcycle/docker-phpstan-drupal)
+* [This project on Docker Hub](https://hub.docker.com/r/dcycle/phpstan-drupal)
