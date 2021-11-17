@@ -85,3 +85,9 @@ Out of memory errors can be fixed by adding `--memory-limit=-1` to the end of yo
       -v $(pwd)/example01/modules_i_want_to_test:/var/www/html/modules/custom \
       dcycle/phpstan-drupal:4 /var/www/html/modules/custom \
       --memory-limit=-1
+      
+Speed increase if using the M1 chip
+-----
+
+* See [Docker PHP on the M1 chip, example with Static Analysis on Drupal: 9 times faster, Dcycle Blog, November 17, 2021](https://blog.dcycle.com/blog/2021-11-17/m1-docker-php-speed-test/).
+
