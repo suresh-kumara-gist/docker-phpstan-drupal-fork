@@ -15,7 +15,7 @@ class SomeClass {
    * @return object
    *   The JSON as a PHP object, or FALSE if an error occurred
    */
-  private function request(string $something) {
+  protected function request(string $something) {
     $other_class = new SomeOtherClass();
     $other_class->sayHello();
 

@@ -17,7 +17,7 @@ class SomeClass {
    * @return array
    *   Array of nodes.
    */
-  private function request() {
+  protected function request() {
     return node_load([]);
   }
 

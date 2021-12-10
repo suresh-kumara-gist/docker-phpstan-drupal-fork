@@ -16,7 +16,7 @@ class SomeClass {
    * @return object
    *   The JSON as a PHP object, or FALSE if an error occurred
    */
-  private function request(string $something) {
+  protected function request(string $something) {
     // SomeThirdPartyModuleClass is NOT in our code. We get around this
     // by telling PHPStan what this class looks like in
     // phpstan-drupal-dummy-classes.php

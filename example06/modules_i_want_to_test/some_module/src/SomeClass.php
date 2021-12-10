@@ -17,7 +17,7 @@ class SomeClass {
    * @return string
    *   A translated string.
    */
-  private function request() {
+  protected function request() {
     return $this->t('Hello world.');
   }
 

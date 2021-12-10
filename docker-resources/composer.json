@@ -26,7 +26,7 @@
         "drupal/core-recommended": "^9",
         "drupal/core-vendor-hardening": "^8.8",
         "drush/drush": "~10",
-        "mglaman/phpstan-drupal": "^0.12.1",
+        "mglaman/phpstan-drupal": "*",
         "phpstan/phpstan-deprecation-rules": "*",
         "phpspec/prophecy-phpunit": "^2"
     },
