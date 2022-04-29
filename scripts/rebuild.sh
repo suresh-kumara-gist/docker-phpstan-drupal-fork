@@ -39,8 +39,8 @@ docker buildx use mybuilder
 docker buildx inspect --bootstrap
 docker login -u"$DOCKERHUBUSER" -p"$DOCKERHUBPASS"
 
-# Start by getting the latest version of the official drupal image
-docker pull dcycle/drupal:9php8
+# Start by getting the latest version of the base image
+docker pull dcycle/drupal:9php8-fpm-alpine
 # Rebuild the entire thing
 docker buildx build -t dcycle/"$PROJECT":"$VERSION" --platform linux/amd64,linux/arm64/v8 --push .
 docker buildx build -t dcycle/"$PROJECT":"$MAJORVERSION" --platform linux/amd64,linux/arm64/v8 --push .

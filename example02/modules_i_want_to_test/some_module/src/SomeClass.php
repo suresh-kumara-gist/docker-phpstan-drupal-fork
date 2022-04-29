@@ -19,7 +19,6 @@ class SomeClass {
     $other_class = new SomeOtherClass();
     $other_class->sayHello();
 
-    // Whatever whatever @phpstan-ignore-next-line whatever whatever.
     return \Drupal::cache()->get(mb_strtolower($something));
   }
 

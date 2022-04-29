@@ -25,12 +25,12 @@ Ignoring a single line of code
 PHPStan by itself supports ignoring an error on a single line, like this:
 
     // @phpstan-ignore-next-line
-    return \Drupal::cache()->get('something');
+    ...some offending code...;
 
 or even:
 
     // Whatever whatever @phpstan-ignore-next-line whatever whatever.
-    return \Drupal::cache()->get('something');
+    ...some offending code...;
 
 Obviously, we generally want to fix the underlying problem, but if for whatever reason you need to ignore an error, you can now do so.
 
@@ -85,7 +85,7 @@ Out of memory errors can be fixed by adding `--memory-limit=-1` to the end of yo
       -v $(pwd)/example01/modules_i_want_to_test:/var/www/html/modules/custom \
       dcycle/phpstan-drupal:4 /var/www/html/modules/custom \
       --memory-limit=-1
-      
+
 Speed increase if using the M1 chip
 -----
 

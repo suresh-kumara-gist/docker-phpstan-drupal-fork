@@ -2,7 +2,7 @@
 # The dcycle/drupal images are updated Wednesdays after the security update
 # window, and already have Composer installed. See
 # https://github.com/dcycle/docker-drupal
-FROM dcycle/drupal:9php8
+FROM dcycle/drupal:9php8-fpm-alpine
 
 COPY docker-resources/composer.json /var/www/html/composer.json
 RUN composer update
