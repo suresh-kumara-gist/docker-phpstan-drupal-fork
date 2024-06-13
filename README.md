@@ -42,6 +42,27 @@ Version history and migrating from one version to another
 * dcycle/phpstan-drupal:2 uses `@phpstan-ignore-next-line` to ignore the next line of code.
 * dcycle/phpstan-drupal:1 uses `phpstan:ignoreError` to ignore the next line of code.
 
+Bootstrap files and mock versions of code
+-----
+
+If you get an error like `class Drupal\some_module\Plugin\Widget not found`, you might need to define a mock version of that class. This might be the case if your code depends on contrib code, for example. Here is how to do it:
+
+* Start by creating a custom config file (see below)
+* In your custom config file, define these lines:
+
+    parameter:
+      ...
+      bootstrapFiles:
+      - /phpstan-drupal/mock-classes.php
+
+* Then create a file called `./tests/lib/phpstan/mock-classes.php`, with
+
+    <?php
+
+    namespace Drupal\some_module\Plugin {
+      class Widget {}
+    }
+
 Custom config file
 -----
 
