@@ -36,7 +36,7 @@ Obviously, we generally want to fix the underlying problem, but if for whatever 
 
 Version history and migrating from one version to another
 -----
-
+* dcycle/phpstan-drupal:5 is based on Drupal 11, and PHP 8
 * dcycle/phpstan-drupal:4 is based on Drupal 9, and PHP 8; Drupal 8-specific code will trigger errors; the deprecated `autoload_files` has been replaced with `bootstrapFiles` in `docker-resources/phpstan.neon`. Version 4 now also includes functionalty from [dcycle/docker-drupal-check](https://github.com/dcycle/docker-drupal-check).
 * dcycle/phpstan-drupal:3 is based on Drupal 9; Drupal 8-specific code might trigger errors.
 * dcycle/phpstan-drupal:2 uses `@phpstan-ignore-next-line` to ignore the next line of code.
