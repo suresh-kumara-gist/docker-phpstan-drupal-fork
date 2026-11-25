@@ -1,4 +1,4 @@
-[![GitHub Actions](https://github.com/dcycle/docker-jenkins/actions/workflows/config.yml/badge.svg)](../../actions/workflows/config.yml)
+[![GitHub Actions](https://github.com/dcycle/docker-phpstan-drupal/actions/workflows/config.yml/badge.svg)](../../actions/workflows/config.yml)
 
 Perform static analysis of Drupal PHP code with [PHPStan](https://github.com/phpstan/phpstan) and [PHPStan-Drupal](https://github.com/mglaman/phpstan-drupal) on Drupal using PHP 8.
 
